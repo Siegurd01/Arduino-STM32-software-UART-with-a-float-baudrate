@@ -9,7 +9,7 @@ I was facing a trouble when an old (1999 year) device starts communicating on 1.
 * Only half-duplex communication implemented (RS485-like).
 ## To do: 
 * library; 
-* read timeouts; 
+* read timeout; 
 * duplex communication;
 * interrupts.
 * RTOS usage, maybe.
