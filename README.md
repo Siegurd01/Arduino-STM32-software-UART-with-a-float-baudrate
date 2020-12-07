@@ -3,7 +3,7 @@ This is a project of a fully software UART protocol implementation for low speed
 ## Why do you need such low baudrate's? 
 I was facing a trouble when an old (1999 year) device starts communicating on 1.75 BAUDRATE and there were no software/hardware library or program I know to handle such speeds. So I decide to create my own and share its with world. It's probably not the performance efficient and ultra high skill coded but it works and now I can communicate with the device! And yes, at a baudrate = 1.75 bod, the byte send/receive took about 5 seconds :)
 For now comunication is made by 2 functions:
-* **uart_recv(uint8_t *data, uint32_t len, uint32_t bit_length);**
+* **uart_recv(uint8_t *data, uint32_t len, uint32_t bit_length);** 
   * **data** is the byte array where you want to store incoming bytes; 
   * **len** is a length of incoming message (here the timeout is neded so use len=1 for now); 
   * **bit_length** is length of 1 bit in microseconds. You can enter a length you measure for example with oscilloscope (**uint32_t bit_time = 580000**), or enter baud you know by **#define baudRate 5.6** for example (the baud value will be converted to bit time automatically)
