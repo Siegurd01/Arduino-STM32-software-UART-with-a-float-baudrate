@@ -12,7 +12,7 @@ For now comunication is made by 2 functions:
 I use a chep and powerfull STM32F103C [bluepill board](https://stm32-base.org/boards/STM32F103C8T6-Blue-Pill.html). It should work on any other STM32 board too. And maybe arduino Nano (not tested).
 ## Software
 * [Standart Arduino IDE](https://www.arduino.cc/en/software)
-* [STM32duino core](https://github.com/stm32duino)
+* [STM32duino core](https://github.com/stm32duino/Arduino_Core_STM32)
 ## Limitations
 * Max baudrate for RX and Tx lines is 38400 (tested with osciloscope and UART decoder). That's a lot especially when no interrupts used. And you can always use usual Serial librarys for higher bauds;
 * Min baud is limited by timer overflow for functions micros() and delayMicroseconds(); (1.0 baud tested with signal analyzer). Probably lower bauds (<1) would work too.
@@ -24,3 +24,5 @@ I use a chep and powerfull STM32F103C [bluepill board](https://stm32-base.org/bo
 * duplex communication;
 * interrupts.
 * RTOS usage, maybe.
+## Thanks
+William Lai who implements c/c++ [software_uart](https://github.com/williamlai/software_uart) for Realtek RTL8195A board.
