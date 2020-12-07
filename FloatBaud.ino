@@ -60,6 +60,23 @@ bool getBit(unsigned char byte, int position) // convert word position to bit
   //  getBit(b,7) << getBit(b,6) << getBit(b,5) << getBit(b,4) << getBit(b,3) << getBit(b,2) << getBit(b,1) << getBit(b,0)
 }
 
+
+
+void sendfromserial() {
+  if (Serial.available() > 0)
+  {
+    String str = "";
+    str = Serial.readStringUntil('\n');
+    char charArr[1000];
+    str.toCharArray(charArr, str.length());      // form a character array from received string
+    Serial.println();
+    for ( int i = 0; i < strlen(charArr) ; i++ ) // send sentence back to terminal to be sure STM32 get it.
+      Serial.print(charArr[i]);
+    Serial.println();
+    uart_snd( charArr, strlen(charArr), bit_time); // send character array to Tx pin
+  }
+}
+
 void uart_recv( uint8_t *data, uint32_t len, uint32_t bit_length) // 8n1
 {
   for ( int i = 0; i < len; i++ )
@@ -111,20 +128,5 @@ void uart_recv( uint8_t *data, uint32_t len, uint32_t bit_length) // 8n1
     //            if (micros() - t > bit_length * 2)  // an attempt to create a timeout feature
     //              return i;
     //          }
-  }
-}
-
-void sendfromserial() {
-  if (Serial.available() > 0)
-  {
-    String str = "";
-    str = Serial.readStringUntil('\n');
-    char charArr[1000];
-    str.toCharArray(charArr, str.length());      // form a character array from received string
-    Serial.println();
-    for ( int i = 0; i < strlen(charArr) ; i++ ) // send sentence back to terminal to be sure STM32 get it.
-      Serial.print(charArr[i]);
-    Serial.println();
-    uart_snd( charArr, strlen(charArr), bit_time); // send character array to Tx pin
   }
 }
