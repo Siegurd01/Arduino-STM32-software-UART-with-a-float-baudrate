@@ -25,4 +25,4 @@ I use a chep and powerfull STM32F103C [bluepill board](https://stm32-base.org/bo
 * interrupts.
 * RTOS usage, maybe.
 ## Thanks
-William Lai who implements c/c++ [software_uart](https://github.com/williamlai/software_uart) for Realtek RTL8195A board.
+Thanks to William Lai who implements c/c++ [software_uart](https://github.com/williamlai/software_uart) for Realtek RTL8195A board, and made [awesome detailed instruction](https://medium.com/@redmilk/implement-software-uart-from-2-gpio-1150e96c3d18) on how UART works.
