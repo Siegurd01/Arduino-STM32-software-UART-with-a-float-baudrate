@@ -18,7 +18,7 @@ I use a chep and powerfull STM32F103C [bluepill board](https://stm32-base.org/bo
 * Min baud is limited by timer overflow for functions micros() and delayMicroseconds(); (1.0 baud tested with signal analyzer). Probably lower bauds (<1) would work too.
 * Only 8-N-1 (standard) mode implemented for now. (8-N-1 means 1 start bit, 8 data bits, 1 stop bit).
 * Only half-duplex communication implemented (RS485-like).
-While read timeout is not yet implemented you should connect both Rx and Tx pins to UART interface of the device because it will stuck on receive *while()* loop waiting for HIGH signal
+* While read timeout is not yet implemented you should connect both Rx and Tx pins to UART interface of the device because it will stuck on receive *while()* loop waiting for HIGH signal
 ## To do: 
 * library; 
 * read timeout; 
